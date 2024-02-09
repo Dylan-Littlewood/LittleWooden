@@ -1,0 +1,10 @@
+{
+  "name" : "cpp-template",
+  "version-string" : "1.0.0",
+  "dependencies" : [ {
+    "name" : "glfw3"
+  }, {
+    "name" : "imgui",
+    "features" : [ "glfw-binding", "vulkan-binding","docking-experimental" ]
+  } ]
+}

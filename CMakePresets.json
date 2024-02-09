@@ -1,0 +1,135 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "windows-base",
+      "displayName": "windows-base",
+      "generator": "Ninja",
+      "hidden": true,
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio"
+        }
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "toolset": {
+        "value": "host=x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_TOOLCHAIN_FILE": "C:\\Users\\dylan\\.vcpkg-clion\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      }
+    },
+    {
+      "name": "linux-base",
+      "displayName": "linux-base",
+      "generator": "Ninja",
+      "hidden": true,
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "WSL"
+        }
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "toolset": {
+        "value": "host=x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang-17",
+        "CMAKE_CXX_COMPILER": "clang++-17",
+        "CMAKE_TOOLCHAIN_FILE": "\\mnt\\c\\Users\\dylan\\.vcpkg-clion\\vcpkg-wsl\\scripts\\buildsystems\\vcpkg.cmake"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "Debug - Windows",
+      "displayName": "Debug",
+      "binaryDir": ".build/cmake/Debug/Windows",
+      "inherits": ["windows-base"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "Release - Windows",
+      "displayName": "Release",
+      "binaryDir": ".build/cmake/Release/Windows",
+      "inherits": ["windows-base"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "RelWithDebInfo - Windows",
+      "displayName": "RelWithDebInfo",
+      "binaryDir": ".build/cmake/RelWithDebInfo/Windows",
+      "inherits": ["windows-base"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name": "MinSizeRel - Windows",
+      "displayName": "MinSizeRel",
+      "binaryDir": ".build/cmake/MinSizeRel/Windows",
+      "inherits": ["windows-base"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel"
+      }
+    },
+    {
+      "name": "Debug - Linux",
+      "displayName": "Debug",
+      "binaryDir": ".build/cmake/Debug/Linux",
+      "inherits": ["linux-base"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "Release - Linux",
+      "displayName": "Release",
+      "binaryDir": ".build/cmake/Release/Linux",
+      "inherits": ["linux-base"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "RelWithDebInfo - Linux",
+      "displayName": "RelWithDebInfo",
+      "binaryDir": ".build/cmake/RelWithDebInfo/Linux",
+      "inherits": ["linux-base"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name": "MinSizeRel - Linux",
+      "displayName": "MinSizeRel",
+      "binaryDir": ".build/cmake/MinSizeRel/Linux",
+      "inherits": ["linux-base"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel"
+      }
+    }
+  ]
+}
