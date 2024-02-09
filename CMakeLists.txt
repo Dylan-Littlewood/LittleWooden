@@ -1,8 +1,8 @@
 ﻿cmake_minimum_required(VERSION 3.28)
-project("C++ GUI Template" CXX)
+project("LittleWooden" CXX)
 include(Utils.cmake)
 set(CORE_PROJECT "Core")
-set(APP_PROJECT "App")
+set(APP_PROJECT "Editor")
 
 # Display CMAKE variables
 MESSAGE(STATUS "Using toolchain file: ${CMAKE_TOOLCHAIN_FILE}\n")
